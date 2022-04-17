@@ -1,0 +1,77 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+        <link rel="icon" href="assets/img/una.svg">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+        
+    <body>
+        <main>
+            <div class="container py-4">
+                <header class="pb-3 mb-4 border-bottom">
+                    <a class="d-flex align-items-center text-dark text-decoration-none">
+                        <img src="assets/img/una.svg" width="70" height="62">
+                    </a>
+                </header>
+    
+                <div class="p-5 mb-4 bg-light rounded-3">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-7 fw-bold">Bem-vindo!</h1>
+                        <p class="col-md-8 fs-5">Insira o código do produto para continuar.</p>
+                        <div class="input-group mb-3 mt-4">
+                            <span class="input-group-text" id="basic-addon1">#</span>
+                            <input type="text" class="form-control" placeholder="Código" aria-label="Código" aria-describedby="basic-addon1">
+                        </div>
+                        <button onclick="searchProduct(this)" class="btn btn-dark btn-lg mt-3" type="submit">Buscar</button>
+                    </div>
+                </div>
+
+                <footer class="py-3 mt-4 text-muted border-top">
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-sm">
+                            <a href="https://github.com/matheus-cog" class="d-flex align-items-center text-dark text-decoration-none">
+                                <img src="assets/img/github.svg" width="10%" height="10%">
+                                <p style="margin-top: 5%; margin-left: 5%;">matheus-cog</p>
+                            </a>
+                          </div>
+                          <div class="col-sm">
+                            <a href="https://github.com/deboragoncalves1" class="d-flex align-items-center text-dark text-decoration-none">
+                                <img src="assets/img/github.svg" width="10%" height="10%">
+                                <p style="margin-top: 5%; margin-left: 5%;">deboragoncalves1</p>
+                            </a>
+                          </div>
+                          <div class="col-sm">
+                            <a href="https://github.com/JamirSoares" class="d-flex align-items-center text-dark text-decoration-none">
+                                <img src="assets/img/github.svg" width="10%" height="10%">
+                                <p style="margin-top: 5%; margin-left: 5%;">JamirSoares</p>
+                            </a>
+                          </div>
+                          <div class="col-sm">
+                            <a href="https://github.com/MSA2103" class="d-flex align-items-center text-dark text-decoration-none">
+                                <img src="assets/img/github.svg" width="10%" height="10%">
+                                <p style="margin-top: 5%; margin-left: 5%;">MSA2103</p>
+                            </a>
+                          </div>
+                        </div>
+                    <div>
+                    <!-- <p style="text-align: center; margin-top: 7%;">&copy; 2022</p> -->
+                </footer>
+            </div>
+        </main>    
+
+        <script>
+            function searchProduct(element) {
+                var parent = element.parentNode;
+                var value = parent.querySelector('input[type=text]').value;
+                if (value == '') {
+                    alert('Você deve inserir um código para continuar.');
+                } else {
+                    window.open("http://localhost:8030/produto/preco/"+value);
+                }
+            }
+        </script>
+    </body>
+</html>
